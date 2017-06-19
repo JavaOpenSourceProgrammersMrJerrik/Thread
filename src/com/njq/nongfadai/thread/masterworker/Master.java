@@ -5,11 +5,25 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * 难点:抽象出Master和Worker抽象对象
+ * @author Jerrik
+ */
 public class Master {
+	/**
+	 * 一个Master主线程 持有一个任务队列。Master主要负责任务的接收和分配
+	 */
 	private Queue<Object> workQueue = new ConcurrentLinkedQueue<Object>();
+	
 
+	/**
+	 * 一个Master持有一个Worker结合  用于批量启动线程
+	 */
 	private Map<String, Thread> threadMap = new HashMap<String, Thread>();
 
+	/**
+	 * 一个Master持有一个结果集,方便统一接收各worker的结果集
+	 */
 	private Map<String, Object> resultMap = new HashMap<String, Object>();
 
 	private int defaultCapicity = 3;

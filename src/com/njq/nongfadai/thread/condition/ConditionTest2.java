@@ -1,6 +1,5 @@
 package com.njq.nongfadai.thread.condition;
 
-import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
